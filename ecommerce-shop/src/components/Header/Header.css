@@ -1,0 +1,15 @@
+.head{
+    background-color: #0f3460;
+    color: white;
+    padding: 10px 0;
+}
+
+.head i{
+    margin-right: 30px;
+
+}
+
+.head label{
+    margin-right: 30px;
+    font-size: 13px;
+}
