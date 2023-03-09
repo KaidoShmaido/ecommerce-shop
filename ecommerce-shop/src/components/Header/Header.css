@@ -6,10 +6,18 @@
 
 .head i{
     margin-right: 30px;
+    
 
 }
 
 .head label{
     margin-right: 30px;
     font-size: 13px;
+}
+
+/*-------------------------search-------------------*/
+
+.search{
+    margin-top: -140px;
+    width: 80%;
 }
