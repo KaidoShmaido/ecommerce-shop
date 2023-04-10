@@ -46,11 +46,7 @@
                                         <input type="checkbox" name="trending">
                                 </div>
 
-                                <div class="col-sm-12">
-                                        <label for="">Meta Title</label>
-                                        <input type="text" name="meta_title" class="form-control">
-
-                                </div>
+                              
                                 <div class="col-sm-12">
                                         <label for="">Original Price</label>
                                         <input type="number" name="original_price" class="form-control">
@@ -62,11 +58,7 @@
                                         <input type="number" name="selling_price" class="form-control">
 
                                 </div>
-                                <div class="col-sm-12">
-                                        <label for="">Tax</label>
-                                        <input type="number" name="tax" class="form-control">
-
-                                </div>
+                             
 
                                 <div class="col-sm-12">
                                         <label for="">Quantity</label>
@@ -74,16 +66,7 @@
 
                                 </div>
 
-                                <div class="col-sm-12">
-                                        <label for="">Meta keywords</label>
-                                        <input type="text" name="meta_keywords" class="form-control">
-
-                                </div>
-                                <div class="col-sm-12">
-                                        <label for="">Meta Description</label>
-                                        <input type="text" name="meta_description" class="form-control">
-
-                                </div>
+                            
                                 <div class="col-sm-12">
                                         <label for="">image</label>
                                         <input type="file" name="image" class="form-control">

@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
-use Illuminate\Support\Facades\File;
-
-
-
 use Illuminate\Http\Request;
+
+
+
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {   
@@ -38,13 +39,9 @@ class ProductController extends Controller
             $products->small_description=$request->input('small_description');
             $products->original_price=$request->input('original_price');
             $products->selling_price=$request->input('selling_price');
-            $products->tax=$request->input('tax');
             $products->quantity=$request->input('quantity');
             $products->status=$request->input('status')== TRUE ? '1':'0';
             $products->trending=$request->input('trending')== TRUE ? '1':'0';
-            $products->meta_title=$request->input('meta_title');
-            $products->meta_keywords=$request->input('meta_keywords');
-            $products->meta_description=$request->input('meta_description');
             $products->save();
             return redirect('/products')->with('status',"Product has been added succesfully");
     }
@@ -74,13 +71,9 @@ class ProductController extends Controller
             $products->small_description=$request->input('small_description');
             $products->original_price=$request->input('original_price');
             $products->selling_price=$request->input('selling_price');
-            $products->tax=$request->input('tax');
             $products->quantity=$request->input('quantity');
             $products->status=$request->input('status')== TRUE ? '1':'0';
             $products->trending=$request->input('trending')== TRUE ? '1':'0';
-            $products->meta_title=$request->input('meta_title');
-            $products->meta_keywords=$request->input('meta_keywords');
-            $products->meta_description=$request->input('meta_description');
             $products->update();
             return redirect('products')->with('status','Product been updated succesfully');
 

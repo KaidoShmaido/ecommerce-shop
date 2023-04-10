@@ -32,21 +32,7 @@
                                         <input type="checkbox" name="popular">
                                 </div>
 
-                                <div class="col-sm-12">
-                                        <label for="">Meta Title</label>
-                                        <input type="text" name="meta_title" class="form-control">
-
-                                </div>
-                                <div class="col-sm-12">
-                                        <label for="">Meta keywords</label>
-                                        <input type="text" name="meta_keywords" class="form-control">
-
-                                </div>
-                                <div class="col-sm-12">
-                                        <label for="">Meta Description</label>
-                                        <input type="text" name="meta_description" class="form-control">
-
-                                </div>
+                            
                                 <div class="col-sm-12">
                                         <label for="">image</label>
                                         <input type="file" name="image" class="form-control">

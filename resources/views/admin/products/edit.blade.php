@@ -45,11 +45,7 @@
                                         <input type="checkbox" name="trending" value="{{$products->trending ? 'checked': ''}}">
                                 </div>
 
-                                <div class="col-sm-12">
-                                        <label for="">Meta Title</label>
-                                        <input type="text" name="meta_title" class="form-control" value="{{$products->meta_title}}">
-
-                                </div>
+                             
                                 <div class="col-sm-12">
                                         <label for="">Original Price</label>
                                         <input type="number" name="original_price" class="form-control" value="{{$products->original_price}}">
@@ -61,11 +57,7 @@
                                         <input type="number" name="selling_price" class="form-control" value="{{$products->selling_price}}">
 
                                 </div>
-                                <div class="col-sm-12">
-                                        <label for="">Tax</label>
-                                        <input type="number" name="tax" class="form-control" value="{{$products->tax}}">
-
-                                </div>
+                             
 
                                 <div class="col-sm-12">
                                         <label for="">Quantity</label>
@@ -73,16 +65,8 @@
 
                                 </div>
 
-                                <div class="col-sm-12">
-                                        <label for="">Meta keywords</label>
-                                        <input type="text" name="meta_keywords" class="form-control" value="{{$products->meta_keywords}}">
-
-                                </div>
-                                <div class="col-sm-12">
-                                        <label for="">Meta Description</label>
-                                        <input type="text" name="meta_description" class="form-control"  value="{{$products->meta_description}}">
-
-                                </div>
+                            
+                           
                                 @if ($products->image)
                                 <img src="{{asset('assets/uploads/products/'.$products->image)}}" alt="" width="100px" height="100px">
                                     

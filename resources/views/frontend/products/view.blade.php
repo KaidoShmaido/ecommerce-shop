@@ -10,7 +10,7 @@
 
 
 
-        <div class="py-3 mb-4 shadow-sm bg-info   border-top">
+        <div class="py-3 mb-4 shadow-sm bg-warning   border-top">
             <div class="container">
                 <h6 class="mb-8"><a href="{{url("/category")}}">Collections</a> /{{$products->category->name}} /{{$products->name}}</h6>
             </div>
@@ -77,6 +77,7 @@
                 </div>
               </div>
             </div>
+        
 @endsection
 
 

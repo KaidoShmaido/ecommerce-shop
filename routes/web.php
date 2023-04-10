@@ -1,14 +1,16 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Admin\FrontendController;
-use App\Http\Controllers\Admin\CategoryController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\WishlistController;
 use App\Http\Controllers\frontend\CartController;
-use App\Http\Controllers\frontend\FrontendHomeController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\frontend\CheckoutController;
-
+use App\Http\Controllers\frontend\FrontendHomeController;
 
 
 
@@ -41,12 +43,14 @@ Route::get('/category/{cate_slug}/{prod_slug}',[FrontendHomeController::class,'p
 
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 Route::post('add-to-cart',[CartController::class,"add_product"]);
 Route::post('delete-cart-item',[CartController::class,"deleteProduct"]);
 Route::post('update-cart',[CartController::class,"updatecart"]);
 
+
+
+Route::post('add-to-wishlist',[WishlistController::class,'add']);
 
 
 
@@ -54,6 +58,10 @@ Route::middleware(['auth'])->group(function () {
    Route::get('cart',[CartController::class,"viewCart"]);
    Route::get('checkout',[CheckoutController::class,"index"]);
    Route::post('place-order',[CheckoutController::class,"placeorder"]);
+   Route::get('wishlist',[WishlistController::class,'index']);
+
+
+
 
 
 

@@ -16,3 +16,13 @@
     font-weight: 400;
 }
 
+.whatsapp-chat{
+    bottom: 0;
+    display: flex;
+    float: left;
+    right: 0;
+    position: fixed;
+
+   
+}
+

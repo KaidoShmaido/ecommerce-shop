@@ -33,7 +33,6 @@ img{
                                         <h5>{{$product->name}}</h5>
                                         <span class="float-start">{{$product->selling_price}}$</span>
                                         <span class="float-end"><s>{{$product->original_price}}</s>$</span>
-                                        <a href="#">Add To Cart</a>
                                     </div>
                             </div>
                         </div>
@@ -59,7 +58,7 @@ img{
                 <div class="col-md-3">
                     <div class="item">
                         <div class="card mb-3">
-                            <img src="{{asset('assets/uploads/category/'.$trend->image)}}" alt="" height="200px" width="230px">
+                            <img src="{{asset('assets/uploads/category/'.$trend->image)}}" alt="" class="mx-auto d-block"  height="200px" width="260px">
                                 <div class="card-body">
                                     <h5>{{$trend->name}}</h5>
                                     <p>

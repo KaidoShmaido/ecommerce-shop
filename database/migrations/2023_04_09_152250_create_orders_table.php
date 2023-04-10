@@ -20,13 +20,15 @@ return new class extends Migration
             $table->string('address');
             $table->string('city');
             $table->string('state');
-            $table->string('zipocode');
+            $table->string('zipcode');
             $table->string('country');
             $table->tinyInteger('status')->default('0');
             $table->string('message')->nullable();
-            $table->string('tracking_number');
+            $table->string('tracking_no');
             $table->timestamps();
         });
+        $table->foreignId('order_id');
+        $table->foreign('order_id')->references('id')->on('orders');
     }
 
     /**

@@ -55,7 +55,7 @@
                                 </li>
                             @endif
                         @else
-                            <div class="nav-item dropdown">
+                            <li class="nav-item dropdown">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{ Auth::user()->name }}
 

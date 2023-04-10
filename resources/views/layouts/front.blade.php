@@ -32,9 +32,11 @@
             text-decoration: none !important;
              color: #000 !important;
         }
+
+        
     </style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
-    
+
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -46,8 +48,10 @@
                     @yield('content')
                 </div>
 
-                
-    
+            
+
+
+
 
          
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>

@@ -15,7 +15,7 @@ Category
                             <div class="col-md-3 mb-3">
                                 <a href="{{url('view-category/'.$cate->slug)}}">
                                     <div class="card d-flex align-items-center">
-                                        <img src="{{asset('assets/uploads/category/'.$cate->image)}}" class=" align-items-center" alt="" height="220px" >
+                                        <img src="{{asset('assets/uploads/category/'.$cate->image)}}" class="mx-auto d-block" alt="" width="180px" height="130px" >
                                         <div class="card-body">
                                             <h5 class="d-flex align-items-center">{{$cate->name}}</h5>
                                             <p>
