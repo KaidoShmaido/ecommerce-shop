@@ -9,6 +9,7 @@
 
 
 
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
         <div class="py-3 mb-4 shadow-sm bg-warning   border-top">
             <div class="container">

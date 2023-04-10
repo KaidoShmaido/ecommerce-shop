@@ -26,17 +26,43 @@ class WishlistController extends Controller
                 $wish->prod_id=$prod_id;
                 $wish->user_id=Auth::id();
                 $wish->save();
-                return response()->json(['status'=>' added to the whislist']);
+                return response()->json(['status'=>'Product added to the whislist']);
 
 
 
             }
             else{
-                return response()->json(['status'=>$prod_check->name.'Already added to the whislist']);
+                return response()->json(['status'=>' Product Already added to the whislist']);
             }
         }
         else{
             return response()->json(["status"=>'login to Continue']);
         }
+    }
+
+    public function  delete_item(Request $request){
+        if(Auth::check())
+                {
+
+                    $prod_id = $request->input('prod_id');
+                    if(Wishlist::where('prod_id',$prod_id)->where('user_id',Auth::id())->exists())
+                    {
+                        $wish=Wishlist::where('prod_id',$prod_id)->where('user_id',Auth::id())->first();
+                        $wish->delete();
+                        return response()->json(['status'=>'item removed from wishlist']);
+
+                    }
+                  
+                }
+                else{
+                    return response()->json(['status'=>"login to continue"]);
+
+                }
+    }
+
+
+    public function wishlistCount(){
+        $wishcount= Wishlist::where('user_id',Auth::id())->count();
+        return response()->json(['count'=>$wishcount]);
     }
 }

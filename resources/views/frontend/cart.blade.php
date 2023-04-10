@@ -19,7 +19,7 @@ My Cart
 
 
 <div class="container my-5">
-    <div class="card shadow ">
+    <div class="card shadow">
         @if($cartItems->count()>0)
             <div class="card-body">
                 @php
@@ -57,15 +57,16 @@ My Cart
                         <button class="btn btn-danger delete-cart-item "><i class="fa fa-trash"></i> Delete</button>
                     </div>
               </div>
-               
+              @endforeach
+              <div class="card-footer">
+                <h6>Total Price : {{$total}}
+                    <a href="{{url('/checkout')}}" class="btn btn-outline-success float-end">Proceed to Checkout </a>
+                </h6>
             </div>
-        @endforeach
-        </div>
-        <div class="card-footer">
-            <h6>Total Price : {{$total}}
-                <a href="{{url('/checkout')}}" class="btn btn-outline-success float-end">Proceed to Checkout </a>
-            </h6>
-        </div>
+            </div>
+      
+          
+       
         @else
             <div class="card-body text-center">
                 <h2>Your <i class="fa fa-shopping-cart"></i>Cart is empty</h2>

@@ -49,8 +49,12 @@ Route::post('delete-cart-item',[CartController::class,"deleteProduct"]);
 Route::post('update-cart',[CartController::class,"updatecart"]);
 
 
+Route::post('load-cart-data',[CartController::class,"cartcount"]);
+Route::post('load-wishlist-data',[WishlistController::class,"wishlistCount"]);
 
-Route::post('add-to-wishlist',[WishlistController::class,'add']);
+Route::get('add-to-wishlist',[WishlistController::class,'add']);
+Route::post('remove-wishlist-item',[WishlistController::class,'delete_item']);
+
 
 
 
