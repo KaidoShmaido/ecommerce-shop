@@ -58,12 +58,13 @@ My Cart
                     </div>
               </div>
               @endforeach
-              <div class="card-footer">
+           
+            </div>
+            <div class="card-footer">
                 <h6>Total Price : {{$total}}
                     <a href="{{url('/checkout')}}" class="btn btn-outline-success float-end">Proceed to Checkout </a>
                 </h6>
-            </div>
-            </div>
+           </div>
       
           
        

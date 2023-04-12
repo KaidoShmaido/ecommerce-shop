@@ -17,42 +17,42 @@
                             <div class="row checkout-form">
                                 <div class="col-md-6">
                                     <label for="">First Name</label>
-                                    <input type="text" class="form-control"  value="fname" placeholder="Enter First name">
+                                    <input type="text" class="form-control"  name="fname" value="{{Auth::user()->fname}}" placeholder="Enter First name">
                                 </div>
 
 
                                   <div class="col-md-6">
                                     <label for="">Last Name</label>
-                                    <input type="text" class="form-control"  value="lname" placeholder="Enter Last name">
+                                    <input type="text" class="form-control"   name="lname" value="{{Auth::user()->lname}}" placeholder="Enter Last name">
                                 </div>
                                
                                   <div class="col-md-6">
                                     <label for="">Email</label>
-                                    <input type="text" class="form-control"  value="email" placeholder="Enter Email">
+                                    <input type="text" class="form-control"  name="email"  value="{{Auth::user()->email}}" placeholder="Enter Email">
                                 </div>
                                   <div class="col-md-6">
                                     <label for="">phone</label>
-                                    <input type="text" class="form-control"  value="phone" placeholder="Enter Phone Number">
+                                    <input type="text" class="form-control"  name="phone" value="{{Auth::user()->phone}}" placeholder="Enter Phone Number">
                                 </div>
                                   <div class="col-md-6">
                                     <label for="">Address </label>
-                                    <input type="text" class="form-control"  value="address" placeholder="Enter Address ">
+                                    <input type="text" class="form-control"    name="address"  value="{{Auth::user()->address}}" placeholder="Enter Address ">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">City</label>
-                                    <input type="text" class="form-control"  value="city" placeholder="Enter City name">
+                                    <input type="text" class="form-control"  name="city" value="{{Auth::user()->city}}" placeholder="Enter City name">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">State</label>
-                                    <input type="text" class="form-control"  value="state" placeholder="Enter State name">
+                                    <input type="text" class="form-control"   name="state"  value="{{Auth::user()->state}}" placeholder="Enter State name">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">Country</label>
-                                    <input type="text" class="form-control"  value="country" placeholder="Enter Country name">
+                                    <input type="text" class="form-control"   name="country" value="{{Auth::user()->country}}" placeholder="Enter Country name">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">Zip Code</label>
-                                    <input type="text" class="form-control"  value="zipcode" placeholder="Enter Zip code">
+                                    <input type="text" class="form-control"    name="zipcode" value="{{Auth::user()->zipcode}}" placeholder="Enter Zip code">
                                 </div>
                             </div>
                         </div>

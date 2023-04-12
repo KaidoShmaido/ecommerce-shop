@@ -42,13 +42,23 @@
             </a>
           </li>
 
-
-          <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
-              <i class="material-icons">content_paste</i>
-              <p>Table List</p>
+          <li class="nav-item {{Request:: is('add-product') ? 'active':''}}">
+            <a class="nav-link" href="{{ url('orders') }}">
+              <i class="material-icons">person</i>
+              <p>Orders</p>
             </a>
           </li>
+
+          <li class="nav-item {{Request:: is('add-product') ? 'active':''}}">
+            <a class="nav-link" href="{{ url('users') }}">
+              <i class="material-icons">person</i>
+              <p> Users</p>
+            </a>
+          </li>
+
+
+
+        
           
         </ul>
       </div>

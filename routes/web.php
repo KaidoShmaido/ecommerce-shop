@@ -4,14 +4,18 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\frontend\Rating;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\frontend\CartController;
+use App\Http\Controllers\frontend\UserController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FrontendController;
+use App\Http\Controllers\Admin\DashboardController;
+
 use App\Http\Controllers\frontend\CheckoutController;
 use App\Http\Controllers\frontend\FrontendHomeController;
-
 
 
 
@@ -63,9 +67,9 @@ Route::middleware(['auth'])->group(function () {
    Route::get('checkout',[CheckoutController::class,"index"]);
    Route::post('place-order',[CheckoutController::class,"placeorder"]);
    Route::get('wishlist',[WishlistController::class,'index']);
-
-
-
+   Route::get('add-rating',[Rating::class,'add']);
+   Route::get('my-orders',[UserController::class,'index']);
+   Route::get('view-order/{id}',[UserController::class,'view']);
 
 
 
@@ -91,6 +95,20 @@ Route::middleware(['auth'])->group(function () {
     Route::get('edit-product/{id}',[ProductController::class,'edit']);
     Route::post('update-product/{id}',[ProductController::class,'update']);
     Route::get('delete-product/{id}',[ProductController::class,'destroy']);
+
+    Route::get('users', [FrontendController::class,'users']);
+
+    Route::get('orders',[OrderController::class,'index']);
+    Route::get('/admin/view-order/{id}',[OrderController::class,'view']);
+    Route::put('update-order/{id}',[OrderController::class,'updateorder']);
+
+    Route::get('order-history',[OrderController::class,'orderhistory']);
+    Route::get('users',[DashboardController::class,'users']);
+    Route::get('view-users/{id}',[DashboardController::class,'viewuser']);
+
+
+
+
 
 
 

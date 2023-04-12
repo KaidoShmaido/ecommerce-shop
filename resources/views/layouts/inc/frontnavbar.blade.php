@@ -1,6 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-info p-3">
     <div class="container-fluid">
       <a class="navbar-brand" href="{{url('/')}}">Maxim E-shop</a>
+<div class="search-bar">
+  
+  <div class="input-group">
+    <input type="text" class="form-control" id="search_product" placeholder="search for a product" aria-label="Username" aria-describedby="basic-addon1">
+    <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+  </div>
+</div>
+      
+
+
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
