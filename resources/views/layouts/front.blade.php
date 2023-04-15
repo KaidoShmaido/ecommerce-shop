@@ -1,4 +1,15 @@
 <!doctype html>
+<!-- Include jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Include jQuery UI library -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">
+<link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet"> <script src="YourJquery source path"></script> 
+<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" ></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
@@ -53,37 +64,32 @@
         
     </style>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
 <script>
-    $( function() {
-      var availableTags = [
-        "ActionScript",
-        "AppleScript",
-        "Asp",
-        "BASIC",
-        "C",
-        "C++",
-        "Clojure",
-        "COBOL",
-        "ColdFusion",
-        "Erlang",
-        "Fortran",
-        "Groovy",
-        "Haskell",
-        "Java",
-        "JavaScript",
-        "Lisp",
-        "Perl",
-        "PHP",
-        "Python",
-        "Ruby",
-        "Scala",
-        "Scheme"
-      ];
-      $( "#search_product" ).autocomplete({
-        source: availableTags
+
+jQuery( function() {
+  // Your autocomplete code here
+  jQuery.noConflict();
+      var availableTags = [];
+      $.ajax({
+        method:'GET',
+        url:'/product-list',
+        success:function(response){
+         // console.log(response);;
+         startAutoComplete(response)
+        }
       });
-    } );
-    </script>
+     
+      function startAutoComplete(availableTags){
+          $( "#search_product" ).autocomplete({
+          source: availableTags
+      });
+      }
+});
+
+     
+   
+</script>
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])

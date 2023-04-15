@@ -1,12 +1,17 @@
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-info p-3">
     <div class="container-fluid">
       <a class="navbar-brand" href="{{url('/')}}">Maxim E-shop</a>
 <div class="search-bar">
   
-  <div class="input-group">
-    <input type="text" class="form-control" id="search_product" placeholder="search for a product" aria-label="Username" aria-describedby="basic-addon1">
-    <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
-  </div>
+  <form action="{{url('Searchproduct')}}" method="GET">
+      <div class="input-group">
+        <input type="text" class="form-control" id="search_product" name="product_name" placeholder="search for a product" aria-label="Username" aria-describedby="basic-addon1">
+        <button  type="submit" class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></button>
+      </div>
+  </form>
+ 
 </div>
       
 

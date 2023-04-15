@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FrontendController;
 use App\Http\Controllers\Admin\DashboardController;
 
+use App\Http\Controllers\frontend\RatingController;
 use App\Http\Controllers\frontend\CheckoutController;
 use App\Http\Controllers\frontend\FrontendHomeController;
 
@@ -42,6 +43,8 @@ Route::get('/view-category/{slug}',[FrontendHomeController::class,'viewcategory'
 Route::get('/category/{cate_slug}/{prod_slug}',[FrontendHomeController::class,'productview']);
 
 
+Route::get('product-list',[FrontendHomeController::class,'productlistAjax']);
+Route::get('Searchproduct',[FrontendHomeController::class,'searchPro']);
 
 
 
@@ -62,12 +65,13 @@ Route::post('remove-wishlist-item',[WishlistController::class,'delete_item']);
 
 
 
+
 Route::middleware(['auth'])->group(function () {
    Route::get('cart',[CartController::class,"viewCart"]);
    Route::get('checkout',[CheckoutController::class,"index"]);
    Route::post('place-order',[CheckoutController::class,"placeorder"]);
    Route::get('wishlist',[WishlistController::class,'index']);
-   Route::get('add-rating',[Rating::class,'add']);
+   Route::put('/add-rating',[RatingController::class,'add']);
    Route::get('my-orders',[UserController::class,'index']);
    Route::get('view-order/{id}',[UserController::class,'view']);
 
