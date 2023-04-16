@@ -15,6 +15,7 @@
         <form action="{{url('/add-rating')}}" method="POST">
             @csrf
             @method('put')
+            <input type="hidden" name="product_id" value="{{$products->id}}">
             <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Rate {{$products->name}}</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -74,6 +75,25 @@
                                <hr>
                                <label class="me-3">Orginal Price : <s>{{$products->original_price}}$</s></label>
                                <label class="fw-bold">Selling Price : {{$products->selling_price}}$</label>
+                               @php $ratenum =number_format($rating_value) @endphp
+                               <div class="rating ">
+                               @for($i=1;$i<=$ratenum;$i++)
+                                    <i class="fa fa-star checked"></i>
+                                @endfor
+                                @for ($j=$ratenum+1;$j<=5;$j++)
+                                    <i class="fa fa-star"></i>
+                                @endfor
+
+                                    <span>
+                                        @if($ratings->count()>0)
+                                            {{$ratings->count()}} Ratings
+                                        @else
+                                            No Ratings 
+                                        @endif
+                                    </span>
+                               </div>
+                              
+
                                <p class="mt-3">
                                  {!! $products ->small_description !!}
                                </p>

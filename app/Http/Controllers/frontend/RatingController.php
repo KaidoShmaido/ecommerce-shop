@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\frontend;
 
+use App\Models\Order;
 use App\Models\Rating;
 use App\Models\Product;
 use App\Models\OrderItems;
@@ -18,13 +19,14 @@ class RatingController extends Controller
 
         $product_check = Product::where('id',$product_id)->where('status','0')->first();
 
-        if($product_check){
+        if($product_check)
+        {
             $verified_purchase =Order::where('orders.user_id',Auth::id())
-            ->join('order_items','orders.id','order_items.order_id')
-            ->where('order_items.prod_id',$product_id)->get();
+                ->join('order_items','orders.id','order_items.order_id')
+                ->where('order_items.prod_id',$product_id)->get();
 
 
-            if($verified_purchase)
+            if($verified_purchase->count() > 0)
             {
                 $existing_rating=Rating::where('user_id',Auth::id())->where('prod_id',$product_id)->first();
                 if($existing_rating)
@@ -43,7 +45,7 @@ class RatingController extends Controller
 
                 ]);
                }
-               return redirect()->back()->with('status','Thanks for rating this products');
+               return redirect()->back()->with('status','Thanks for rating this product');
 
             }
             else

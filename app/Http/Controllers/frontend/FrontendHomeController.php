@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers\frontend;
-use App\Models\Category;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Rating;
 use App\Models\Product;
+use App\Models\Category;
 use App\Models\OrderItems;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 
 
@@ -48,7 +49,17 @@ class FrontendHomeController extends Controller
         if(Category::where('slug',$cate_slug)->exists()){
             if(Product::where('slug',$prod_slug)->exists()){
                 $products =Product::where('slug',$prod_slug)->first();
-                return view('frontend.products.view', compact('products'));
+                $ratings =Rating::where('prod_id',$products->id)->get();
+                $rating_sum =Rating::where('prod_id',$products->id)->sum('stars_rated');
+
+                if($ratings->count()>0){
+                    $rating_value=$rating_sum/$ratings->count();
+
+                }
+                else{
+                    $rating_value = 0;
+                }
+                return view('frontend.products.view', compact('products','ratings','rating_value'));
             }
             else{
                 return redirect('/')->with('status', 'the link is broken');
