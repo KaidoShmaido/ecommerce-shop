@@ -26,9 +26,10 @@ return new class extends Migration
             $table->string('message')->nullable();
             $table->string('tracking_no');
             $table->timestamps();
+            $table->foreignId('order_id');
+            $table->foreign('order_id')->references('id')->on('orders');
         });
-        $table->foreignId('order_id');
-        $table->foreign('order_id')->references('id')->on('orders');
+
     }
 
     /**
