@@ -16,7 +16,7 @@ My Orders
                             </h4>
                         </div>
                     <div class="card-body">
-                        
+
                        <div class="row">
                         <div class="col-md-6 orders-details">
                             <label for="">First Name</label>
@@ -27,10 +27,10 @@ My Orders
 
                             <label for="">Email</label>
                             <div class="border p-2">{{$orders->email}}</div>
-                            
+
                             <label for="">Contact Number</label>
                             <div class="border p-2">{{$orders->phone}}</div>
-                            
+
                             <label for="">Shipping Address</label>
                             <div class="border p-2">
                                 {{$orders->address}},
@@ -50,7 +50,7 @@ My Orders
                                             <th>Qunatity</th>
                                             <th> Price</th>
                                             <th>Image</th>
-                
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -59,10 +59,12 @@ My Orders
                                                 <td> {{$item->products->name}} </td>
                                                 <td> {{$item->quantity}} </td>
                                                 <td> {{$item->price}} </td>
-                                                <td> <img src="{{asset('assets/uploads/products/'.$item->products->image)}}" width='50px' alt=""> </td>
+                                                <td>
+                                                    <img src="{{asset('assets/uploads/products/'.$item->products->image)}}" width='50px' alt="">
+                                                </td>
 
                                             </tr>
-                                        
+
                                         @endforeach
                                     </tbody>
                                 </table>
@@ -70,12 +72,12 @@ My Orders
                             </div>
                        </div>
 
-                      
- 
+
+
                         </div>
                 </div>
-              
+
             </div>
         </div>
     </div>
-@endsection  
+@endsection

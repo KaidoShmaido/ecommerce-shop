@@ -6,7 +6,7 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="{{asset('assets/images/istockphoto-1301421740-612x612.jpg')}}" class="d-block w-100" alt="..." height="500px">
+        <img src="{{asset('assets/images/headset.jpg')}}" class="d-block w-100" alt="..." height="500px">
       </div>
       <div class="carousel-item">
         <img src="{{asset('assets/images/w-qjCHPZbeXCQ-unsplash.jpg')}}" class="d-block w-100" alt="..." height="500px">
